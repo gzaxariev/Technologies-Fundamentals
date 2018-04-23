@@ -1,0 +1,13 @@
+﻿@model CarWebSystem.Models.Cars.DeleteCarViewModel
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Are you sure you want to delete your car: @Model.Car?</h2>
+
+
+<a asp-controller="Cars" asp-action="ConfirmDelete" asp-route-id="@Model.Id" class="btn btn-danger">Yes!</a>
+<a asp-controller="Cars" asp-action="All" as class="btn btn-default">No</a>
+
+
+

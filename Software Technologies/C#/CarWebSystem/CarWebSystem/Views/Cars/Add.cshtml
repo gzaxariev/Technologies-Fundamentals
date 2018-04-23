@@ -1,0 +1,39 @@
+﻿ @model CarWebSystem.Models.Cars.AddCarFormModel
+@{
+    ViewData["Title"] = "Add Car";
+}
+
+<h2>Add Car</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="Make">Make</label>
+                <input class="form-control" asp-for="Make" placeholder="Make">
+                <span asp-validation-for="Make" class="form-text text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Model">Model</label>
+                <input class="form-control" asp-for="Model" placeholder="Model">
+                <span asp-validation-for="Model" class="form-text text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Year">Year</label>
+                <input type="number" class="form-control" asp-for="Year" placeholder="Year">
+                <span asp-validation-for="Year" class="form-text text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price">Price</label>
+                <input type="number" min="0" step ="100" class="form-control" asp-for="Price" placeholder="Price">
+                <span asp-validation-for="Price" class="form-text text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageUrl">ImageUrl</label>
+                <input type="url" class="form-control" asp-for="ImageUrl" placeholder="ImageUrl">
+                <span asp-validation-for="ImageUrl" class="form-text text-danger"></span>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Save Car" />
+        </form>
+    </div>
+</div>

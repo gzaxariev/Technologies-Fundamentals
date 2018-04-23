@@ -1,0 +1,23 @@
+﻿@model List<CarWebSystem.Models.Cars.CarListingViewModel>
+@{
+    ViewData["Title"] = "All Available Cars";
+}
+
+<h2 class="text-center">Our Cars</h2>
+
+@foreach (var car in Model)
+{
+    <div class="row car-listing-margin">
+        <div class="col-md-3 col-md-offset-3">
+            <a asp-controller="Cars" asp-action="Details" asp-route-id="@car.Id">
+                <img class="img-responsive img-rounded" src="@car.ImageUrl"/>
+            </a>
+        </div>
+        <div class="col-md-3">
+            <h3>
+                <a href="/Cars/Details/@car.Id">@car.Make @car.Model</a>
+            </h3>
+        </div>
+    </div>
+}
+

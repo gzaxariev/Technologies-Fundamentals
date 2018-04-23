@@ -1,0 +1,22 @@
+﻿@using CarWebSystem.Models.Cars
+@model CarWebSystem.Models.Cars.CarDetailsViewModel  
+
+@{
+    ViewData["Title"] = $"{Model.Make} {Model.Model}";
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <img class="img-responsive" src="@Model.ImageUrl" alt="@Model.Make @Model.Model" />
+    </div>
+    <div class="col-md-4">
+        <h2>@Model.Make @Model.Model</h2>
+        <h3>@Model.Year - $@Model.Price</h3>
+        <small><em>Added by @Model.Username</em></small>
+        @if (User.Identity.IsAuthenticated && Model.Username == User.Identity.Name)
+        {
+            <a class="btn btn-danger" asp-controller="Cars" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
+        }
+    </div>
+</div>
+
